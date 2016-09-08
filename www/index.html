@@ -1,0 +1,104 @@
+<!DOCTYPE html>controller
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/materialize.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/socket.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIWf5JoQWjV4FcbNWwaReG1CMrlRreoe8"></script>
+    <script type="text/javascript" src="http://pokemonconnect.co/app/socket/flash/swfobject.js"></script>
+    <script type="text/javascript" src="http://pokemonconnect.co/app/socket/flash/web_socket.js"></script>
+    <script>
+        getSession();
+        getLocation();
+        
+        setInterval(getLocation,10000);
+    </script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+    <div id="web-principal-content">
+        <div id="log" class="view-chat">
+        </div>
+        <div id="view_loading" class="views pokemon-background">
+            <div class="table"><div class="cell">
+                <div id="preloader-support" class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue-only spinner-blue-total">
+                        <div class="circle-clipper left">
+                        <div class="circle"></div>
+                        </div><div class="gap-patch">
+                        <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>  
+            </div></div>
+        </div>
+        <div id="view_landing" class="views pokemon-background">
+            <div class="content">
+                <div class="table"><div class="cell">
+                    <img id="logo"src="img/logo.png"/>
+                    <img id="logoconnect"src="img/logoconnect.png"/>
+                    <form id="form_session">
+                        <div class="form">
+                            <input type="text" name="nickname" placeholder="NICKNAME"/>
+                        </div>
+                        <div class="form">
+                            <input type="text" name="level" placeholder="LEVEL"/>
+                        </div>
+                        <div class="form">
+                            <div class="teamCircle teamCircleYellow" onclick="createInput('team', '1'); activeId(event);"></div>
+                            <div class="teamCircle teamCircleBlue" onclick="createInput('team', '2'); activeId(event);"></div>
+                            <div class="teamCircle teamCircleRed" onclick="createInput('team', '3'); activeId(event);"></div>
+                        </div>
+                        <div class="form">
+                            <div class="moveCircle moveCircleWalk" onclick="createInput('move', '1'); activeId(event);"></div>
+                            <div class="moveCircle moveCircleRoller" onclick="createInput('move', '1'); activeId(event);"></div>
+                            <div class="moveCircle moveCircleBike" onclick="createInput('move', '1'); activeId(event);"></div>
+                        </div>
+                        <input id="input_team" name="team" value="0" type="hidden" />
+                    </form>
+                    <a id="continue" onclick="return saveSession();" class="waves-effect waves-light btn">SAVE</a>
+                </div></div>
+            </div>
+        </div>
+        <div id="view_map" class="views pokemon-background">
+            <div class="table"><div class="cell">
+                <div id="preloader-support" class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue-only spinner-blue-total">
+                        <div class="circle-clipper left">
+                        <div class="circle"></div>
+                        </div><div class="gap-patch">
+                        <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>  
+            </div></div>
+        </div>
+    </div>
+  </body>
+</html>

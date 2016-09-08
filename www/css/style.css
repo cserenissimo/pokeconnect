@@ -1,0 +1,193 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.pokemon-background {
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(233,255,224,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(233,255,224,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(233,255,224,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(233,255,224,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(233,255,224,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(233,255,224,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9ffe0', GradientType=0 );
+}
+ 
+#view_loading {
+    display: block;
+    float: left;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+.view-chat {
+    display: none;
+    float:  left;
+    width: 250px;
+    height: 100vh;
+    background-color: #ccc;
+    color: #fff;
+    border-right: 1px solid blue;
+}
+#view_landing {
+    display: none;
+    float: left;
+    width: calc(100vw - 0px);
+    height: 100vh;
+    text-align: center;
+}   
+#view_landing #logo{
+    width: 50%;
+    margin: 0 25%;
+    height: auto;
+}
+#view_landing #logoconnect{
+    width: 50%;
+    height: auto;
+    margin: 1vh 25%;
+}
+#view_landing .form {
+    width: 100%;
+    text-align: center;
+    margin:  20px 0;
+}
+#view_landing .form .teamCircle, .moveCircle {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border:  4px solid #fff;
+    display: inline-block;
+    cursor:  pointer;
+    margin: 0 6px;
+}
+
+.teamCircleRed {
+    background-color: #6c1800;
+}
+.teamCircle.teamCircleRed:hover, .teamCircle.teamCircleRed.active {
+    border:  4px solid #6c1800 !important;
+    background-color: #B82900;
+}
+.teamCircleBlue {
+    background-color: #00406c;
+}
+.teamCircle.teamCircleBlue:hover, .teamCircle.teamCircleBlue.active {
+    border:  4px solid #00406c !important;
+    background-color: #003152;
+}
+
+.teamCircleYellow {
+    background-color: #c9c118;
+}
+.teamCircleYellow:hover, .teamCircleYellow.active {
+    border:  4px solid #c9c118 !important;
+    background-color: #AFA915;
+}
+
+#view_landing .form input {
+    width: 70%;
+    height: 54px;
+    border-radius: 8px;
+    border: 4px solid #31cb9e;
+    text-align: center;
+    font-weight:  bold;
+    font-size: 28px;
+}
+
+.moveCircle {
+    background-color: #31cb9e;
+    background-size:  auto 50%;
+    background-position: centeR;
+    background-repeat: no-repeat;
+}
+.moveCircle:hover, .moveCircle.active {
+    background-color: #2BB18A;
+    border:  4px solid #31cb9e;
+}
+.moveCircleWalk {
+    background-image: url('/img/walk.png');
+}
+.moveCircleRoller {
+    background-image: url('/img/roller.png');
+}
+.moveCircleBike {
+    background-image: url('/img/bike.png');
+}
+
+#view_landing #continue {
+    float: right;
+    line-height: 40px;
+    height: 40px;
+    font-size: 20px;
+    background: none;
+    color: #31cb9e;
+    font-weight: bold;
+    box-shadow: none;
+}
+#view_landing #continue:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+#view_map {
+    float: left;
+    width: calc(100vw - 0px);
+    height: 100vh;
+    text-align: center;
+}
+
+@media(max-width:767px){
+    #view_landing .content {
+        width: 80vw;
+        margin: 0vh 10vw;
+        height: 100vh;
+    }
+    #view_landing #logo{
+        width: 80%;
+        margin: 0 10%;
+        height: auto;
+    }
+    #view_landing #logoconnect{
+        width: 60%;
+        height: auto;
+        margin: 1vh 20%;
+    }   
+}
+
+@media(min-width:768px){
+    #view_landing .content {
+        width: 300px;
+        margin: 0vh calc(50% - 150px);
+        height: 100vh;
+    }
+    
+    #view_landing .form .teamCircle, .moveCircle {
+        height: 40px;
+        width: 40px;
+    }
+    
+    #view_landing .form input {
+        height: 38px;
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    #view_landing #continue {
+        right: calc(50% - 150px);
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+    }
+}
